@@ -24,6 +24,9 @@
    (ratio:new (* num-a num-b)
               (* den-a den-b))))
 
-(defun div (a b)
-  'noop)
+(defun div
+  (((match-ratio numer num-a denom den-a)
+    (match-ratio numer num-b denom den-b))
+   (ratio:new (* num-a den-b)
+              (* den-a num-b))))
 
