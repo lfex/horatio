@@ -31,3 +31,17 @@
   (is-equal #(ratio 1 4)
             (ratio:sub (ratio:new 1 -2)
                        (ratio:new 3 -4))))
+
+(deftest mult
+  (is-equal #(ratio 3 8)
+            (ratio:mult (ratio:new 1 2)
+                        (ratio:new 3 4)))
+  (is-equal #(ratio 3 8)
+            (ratio:mult (ratio:new -1 -2)
+                        (ratio:new -3 -4)))
+  (is-equal #(ratio 3 8)
+            (ratio:mult (ratio:new -1 2)
+                        (ratio:new -3 4)))
+  (is-equal #(ratio 3 -8)
+            (ratio:mult (ratio:new 1 2)
+                        (ratio:new 3 -4))))

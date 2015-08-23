@@ -18,8 +18,11 @@
    (ratio:new (- (* num-a den-b) (* den-a num-b))
               (* den-a den-b))))
 
-(defun mult (a b)
-  'noop)
+(defun mult
+  (((match-ratio numer num-a denom den-a)
+    (match-ratio numer num-b denom den-b))
+   (ratio:new (* num-a num-b)
+              (* den-a den-b))))
 
 (defun div (a b)
   'noop)
