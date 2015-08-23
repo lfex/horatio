@@ -8,16 +8,26 @@
   (is-equal #(ratio 5 4)
             (ratio:add (ratio:new 1 2)
                        (ratio:new 3 4)))
-
   (is-equal #(ratio 5 4)
             (ratio:add (ratio:new -1 -2)
                        (ratio:new -3 -4)))
-
   (is-equal #(ratio 5 -4)
             (ratio:add (ratio:new -1 2)
                        (ratio:new -3 4)))
-
   (is-equal #(ratio 5 -4)
             (ratio:add (ratio:new 1 -2)
                        (ratio:new 3 -4))))
 
+(deftest sub
+  (is-equal #(ratio 1 -4)
+            (ratio:sub (ratio:new 1 2)
+                       (ratio:new 3 4)))
+  (is-equal #(ratio 1 -4)
+            (ratio:sub (ratio:new -1 -2)
+                       (ratio:new -3 -4)))
+  (is-equal #(ratio 1 4)
+            (ratio:sub (ratio:new -1 2)
+                       (ratio:new -3 4)))
+  (is-equal #(ratio 1 4)
+            (ratio:sub (ratio:new 1 -2)
+                       (ratio:new 3 -4))))
