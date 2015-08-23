@@ -3,7 +3,8 @@
           (get-versions 0)
           (gcd 2)
           (->str 1)
-          (->atom 1)))
+          (->atom 1)
+          (->float 1)))
 
 (include-lib "horatio/include/data-types.lfe")
 
@@ -17,6 +18,7 @@
 (defun gcd
   ((a 0) a)
   ((0 b) b)
+  ((a b) (when (== a b)) a)
   ((a b) (when (< (* a b) 0))
    (* -1 (gcd (abs a) (abs b))))
   ((a b)
@@ -26,7 +28,12 @@
 
 (defun ->str
   (((match-ratio numer n denom d))
-   (io_lib:format "~p/~p" `(,n ,d))))
+   (lists:flatten
+     (io_lib:format "~p/~p" `(,n ,d)))))
 
 (defun ->atom (ratio)
-  (list_to_atom ratio))
+  (list_to_atom (->str ratio)))
+
+(defun ->float
+  (((match-ratio numer n denom d))
+   (/ n d)))
