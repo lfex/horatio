@@ -30,3 +30,12 @@
   (is-equal #(ratio 1 3) (ratio:normalize (ratio:new '5/15)))
   (is-equal #(ratio 45 17) (ratio:normalize (ratio:new #(45 17)))))
 
+(deftest float->ratio
+  (is-equal #(ratio 1 1) (ratio:float->ratio 1.0))
+  (is-equal #(ratio 1 2) (ratio:float->ratio 0.5))
+  (is-equal #(ratio 7 8) (ratio:float->ratio 0.875))
+  (is-equal #(ratio 19 8) (ratio:float->ratio 2.375))
+  (is-equal #(ratio 6795704571147613184 2500000000000000000)
+            (ratio:float->ratio (math:exp 1)))
+  (is-equal #(ratio 785398163397448320 250000000000000000)
+            (ratio:float->ratio (math:pi))))

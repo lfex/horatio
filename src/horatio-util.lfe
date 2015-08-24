@@ -6,6 +6,7 @@
           (->atom 1)
           (->float 1)
           (normalize 1)
+          (float->ratio 1)
           (print-api-functions 0)))
 
 (include-lib "horatio/include/data-types.lfe")
@@ -38,9 +39,20 @@
 
 (defun normalize
   (((match-ratio numer num denom den))
-   (let ((g (ratio:gcd num den)))
-     (make-ratio numer (trunc (/ num g))
-                 denom (trunc (/ den g))))))
+   (normalize num den)))
+
+(defun normalize (numer denom)
+  (let ((g (gcd numer denom)))
+    (ratio:new (trunc (/ numer g))
+               (trunc (/ denom g)))))
+
+(defun float->ratio
+  ((f) (when (is_float f))
+   (let* ((fl (float_to_list f '(#(decimals 20))))
+          (`(,int ,dec) (string:tokens fl "."))
+          (numer (list_to_integer (++ int dec)))
+          (denom (trunc (math:pow 10 (length dec)))))
+     (normalize numer denom))))
 
 (defun check-function
   ((`#(,func-name ,arity))
