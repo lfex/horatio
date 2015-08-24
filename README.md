@@ -19,7 +19,7 @@
     * [Arithmatic](#arithmatic-)
     * [Operations](#operations-)
     * [Powers](#powers-)
-  * [API](#api-)
+* [API](#api-)
 
 ## Introduction [&#x219F;](#table-of-contents)
 
@@ -62,7 +62,7 @@ And then do the usual:
 #### Operations [&#x219F;](#table-of-contents)
 #### Powers [&#x219F;](#table-of-contents)
 
-### API [&#x219F;](#table-of-contents)
+## API [&#x219F;](#table-of-contents)
 
 <!-- Named page links below: /-->
 
