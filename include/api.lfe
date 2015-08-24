@@ -3,6 +3,7 @@
           ,@(kla:wrap-mod-funcs 'horatio-arith)
           ,@(kla:wrap-mod-funcs 'horatio-io)
           ,@(kla:wrap-mod-funcs 'horatio-ops)
+          ,@(kla:wrap-mod-funcs 'horatio-exp)
           ,@(kla:wrap-mod-funcs 'horatio-util)))
 
 (generate-ratio-api-wrappers)

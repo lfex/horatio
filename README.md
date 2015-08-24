@@ -126,7 +126,18 @@ true
 #### Powers [&#x219F;](#table-of-contents)
 
 ```lfe
-
+> (ratio:print (ratio:pow r1 4))
+1/81
+ok
+> (ratio:print (ratio:pow r1 -4))
+81/1
+ok
+> (ratio:print (ratio:pow r2 4))
+1/256
+ok
+> (ratio:print (ratio:pow r2 -4))
+256/1
+ok
 ```
 
 ## API [&#x219F;](#table-of-contents)
