@@ -12,5 +12,5 @@
    (ratio:new (trunc (math:pow num n))
               (trunc (math:pow den n))))
   (((match-ratio numer num denom den) n) (when (=< n -1))
-   (ratio:new (trunc (math:pow den n))
-              (trunc (math:pow num n)))))
+   (ratio:new (trunc (math:pow den (abs n)))
+              (trunc (math:pow num (abs n))))))
