@@ -7,7 +7,8 @@
 (include-lib "horatio/include/data-types.lfe")
 
 (defun new (num den)
-  (make-ratio numer num denom den))
+  (let ((`(,num ,den) (ratio:fix-sign num den)))
+    (make-ratio numer num denom den)))
 
 (defun new
   ((ratio) (when (is_list ratio))

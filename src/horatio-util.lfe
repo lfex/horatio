@@ -5,7 +5,8 @@
           (->str 1)
           (->atom 1)
           (->float 1)
-          (normalize 1)
+          (normalize 1) (normalize 2)
+          (fix-sign 1) (fix-sign 2)
           (float->ratio 1)
           (print-api-functions 0)))
 
@@ -38,13 +39,25 @@
    (/ n d)))
 
 (defun normalize
-  (((match-ratio numer num denom den))
-   (normalize num den)))
+  (((match-ratio numer n denom d))
+   (normalize n d)))
 
 (defun normalize (numer denom)
   (let ((g (gcd numer denom)))
     (ratio:new (trunc (/ numer g))
                (trunc (/ denom g)))))
+
+(defun fix-sign
+  (((match-ratio numer n denom d))
+   (fix-sign n d)))
+
+(defun fix-sign (n d)
+  (cond ((and (< n 0) (< d 0))
+         (list (abs n) (abs d)))
+        ((< d 0)
+         (list (* -1 n) (abs d)))
+        ('true
+         (list n d))))
 
 (defun float->ratio
   ((f) (when (is_float f))
@@ -62,6 +75,7 @@
                  loaded-ratio-data-types
                  loaded-ratio-api
                  loaded-ratio
+                 fix-sign
                  print-api-functions)))
      (if (lists:member func-name skip)
        'false

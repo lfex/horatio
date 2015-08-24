@@ -26,9 +26,15 @@
 
 (deftest normalize
   (is-equal #(ratio 1 2) (ratio:normalize (ratio:new 1 2)))
-  (is-equal #(ratio 3 -8) (ratio:normalize (ratio:new "-3/8")))
+  (is-equal #(ratio -3 8) (ratio:normalize (ratio:new "-3/8")))
   (is-equal #(ratio 1 3) (ratio:normalize (ratio:new '5/15)))
   (is-equal #(ratio 45 17) (ratio:normalize (ratio:new #(45 17)))))
+
+(deftest fix-sign
+  (is-equal '(1 2) (ratio:fix-sign 1 2))
+  (is-equal '(-1 2) (ratio:fix-sign -1 2))
+  (is-equal '(-1 2) (ratio:fix-sign 1 -2))
+  (is-equal '(1 2) (ratio:fix-sign -1 -2)))
 
 (deftest float->ratio
   (is-equal #(ratio 1 1) (ratio:float->ratio 1.0))
