@@ -2,7 +2,7 @@
 
 *The rational and most trusted friend of the tragic hero, Floating Point*
 
-[![][logo]]
+[![Horatio logo][logo]]
 
 ## Introduction
 
