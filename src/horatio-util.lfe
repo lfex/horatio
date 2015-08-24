@@ -42,10 +42,11 @@
   (((match-ratio numer n denom d))
    (normalize n d)))
 
-(defun normalize (numer denom)
-  (let ((g (gcd numer denom)))
-    (ratio:new (trunc (/ numer g))
-               (trunc (/ denom g)))))
+(defun normalize (n d)
+  (let ((`(,n ,d) (fix-sign n d))
+        (g (gcd n d)))
+    (ratio:new (trunc (/ n g))
+               (trunc (/ d g)))))
 
 (defun fix-sign
   (((match-ratio numer n denom d))
