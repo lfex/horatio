@@ -20,3 +20,9 @@
 (deftest new-from-tuple
   (is-equal #(ratio 45 17) (ratio:new #(45 17))))
 
+(deftest numer
+  (is-equal 45 (ratio:numer (ratio:new '45/17))))
+
+(deftest denom
+  (is-equal 17 (ratio:denom (ratio:new '45/17))))
+
