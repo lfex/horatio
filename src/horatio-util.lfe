@@ -21,12 +21,8 @@
   ((a 0) a)
   ((0 b) b)
   ((a b) (when (== a b)) a)
-  ((a b) (when (< (* a b) 0))
-   (* -1 (gcd (abs a) (abs b))))
   ((a b)
-   (if (> a b)
-       (gcd (- a b) b)
-       (gcd (- b a) a))))
+   (gcd b (rem a b))))
 
 (defun ->str
   (((match-ratio numer n denom d))

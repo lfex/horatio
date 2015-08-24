@@ -140,6 +140,14 @@ ok
 ok
 ```
 
+Large numbers:
+
+```lfe
+> (ratio:print (ratio:div (ratio:pow 3 200) (ratio:pow 2 430)))
+8960496791105607/93536104789177786765035829293842113257979682750464
+ok
+```
+
 ## API [&#x219F;](#table-of-contents)
 
 The list of functions currently supported by the ratio library are as
