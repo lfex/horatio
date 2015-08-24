@@ -33,7 +33,7 @@ And then do the usual:
 
 Add content to me here!
 
-[comment]: # Named page links below:
+<!-- Named page links below: /-->
 
 [travis]: https://travis-ci.org/lfex/horatio
 [travis-badge]: https://travis-ci.org/lfex/horatio.png?branch=master
