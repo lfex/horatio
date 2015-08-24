@@ -119,7 +119,7 @@ For the following examples we'll use these rational numbers:
 Addition:
 
 ```lfe
-> (ratio:print (ratio:add r1 r2))
+> (ratio:pp (ratio:add r1 r2))
 7/12
 ok
 ```
@@ -127,7 +127,7 @@ ok
 Subtraction:
 
 ```lfe
-> (ratio:print (ratio:sub r1 r2))
+> (ratio:pp (ratio:sub r1 r2))
 1/12
 ok
 ```
@@ -135,7 +135,7 @@ ok
 Multiplication:
 
 ```lfe
-> (ratio:print (ratio:mult r1 r2))
+> (ratio:pp (ratio:mult r1 r2))
 1/12
 ok
 ```
@@ -143,7 +143,7 @@ ok
 Division:
 
 ```lfe
-> (ratio:print (ratio:div r1 r2))
+> (ratio:pp (ratio:div r1 r2))
 4/3
 ok
 ```
@@ -159,16 +159,16 @@ true
 #### Powers [&#x219F;](#table-of-contents)
 
 ```lfe
-> (ratio:print (ratio:pow r1 4))
+> (ratio:pp (ratio:pow r1 4))
 1/81
 ok
-> (ratio:print (ratio:pow r1 -4))
+> (ratio:pp (ratio:pow r1 -4))
 81/1
 ok
-> (ratio:print (ratio:pow r2 4))
+> (ratio:pp (ratio:pow r2 4))
 1/256
 ok
-> (ratio:print (ratio:pow r2 -4))
+> (ratio:pp (ratio:pow r2 -4))
 256/1
 ok
 ```
@@ -176,7 +176,7 @@ ok
 Large numbers:
 
 ```lfe
-> (ratio:print (ratio:div (ratio:pow 3 200) (ratio:pow 2 430)))
+> (ratio:pp (ratio:div (ratio:pow 3 200) (ratio:pow 2 430)))
 8960496791105607/93536104789177786765035829293842113257979682750464
 ok
 ```
@@ -203,6 +203,7 @@ ratio:normalize/1
 ratio:normalize/2
 ratio:numer/1
 ratio:pow/2
+ratio:pp/1
 ratio:print/1
 ratio:ratio/1
 ratio:ratio/2

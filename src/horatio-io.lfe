@@ -17,3 +17,6 @@
    (io:format (++ (ratio:->str r) "~n")))
   ((x)
    (io:format "~p~n" (list x))))
+
+(defun pp (r)
+  (print r))
