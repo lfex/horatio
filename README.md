@@ -1,5 +1,8 @@
-# horatio
+# horatio [![Build Status][travis-badge]][travis]
 
+*The rational and most trusted friend of the tragic hero, Floating Point*
+
+[![][logo]]
 
 ## Introduction
 
@@ -14,7 +17,7 @@ Just add it to your ``rebar.config`` deps:
   {deps, [
     ...
     {horatio, ".*",
-      {git, "git@github.com:YOURNAME/horatio.git", "master"}}
+      {git, "git@github.com:lfex/horatio.git", "master"}}
       ]}.
 ```
 
@@ -29,3 +32,9 @@ And then do the usual:
 ## Usage
 
 Add content to me here!
+
+[//]: <> Links:
+
+[travis]: https://travis-ci.org/lfex/horatio
+[travis-badge]: https://travis-ci.org/lfex/horatio.png?branch=master
+[logo]: resources/images/horatio.jpg
