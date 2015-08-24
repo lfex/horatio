@@ -42,7 +42,7 @@
   (is-equal #(ratio 3 8)
             (ratio:mult (ratio:new -1 2)
                         (ratio:new -3 4)))
-  (is-equal #(ratio 3 -8)
+  (is-equal #(ratio -3 8)
             (ratio:mult (ratio:new 1 2)
                         (ratio:new 3 -4))))
 
@@ -56,7 +56,7 @@
   (is-equal #(ratio 2 3)
             (ratio:div (ratio:new -1 2)
                         (ratio:new -3 4)))
-  (is-equal #(ratio -2 3)
+  (is-equal #(ratio 2 -3)
             (ratio:div (ratio:new 1 2)
                         (ratio:new 3 -4))))
 

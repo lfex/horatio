@@ -4,7 +4,8 @@
           (gcd 2)
           (->str 1)
           (->atom 1)
-          (->float 1)))
+          (->float 1)
+          (normalize 1)))
 
 (include-lib "horatio/include/data-types.lfe")
 
@@ -37,3 +38,9 @@
 (defun ->float
   (((match-ratio numer n denom d))
    (/ n d)))
+
+(defun normalize
+  (((match-ratio numer num denom den))
+   (let ((g (ratio:gcd num den)))
+     (make-ratio numer (trunc (/ num g))
+                 denom (trunc (/ den g))))))
