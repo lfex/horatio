@@ -1,4 +1,4 @@
-(defmodule unit-ratio-ops-tests
+(defmodule unit-horatio-ops-tests
   (behaviour ltest-unit)
   (export all))
 

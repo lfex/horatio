@@ -1,4 +1,4 @@
-(defmodule unit-ratio-arith-tests
+(defmodule unit-horatio-arith-tests
   (behaviour ltest-unit)
   (export all))
 
