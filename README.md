@@ -12,6 +12,7 @@
   * [Creating Fractions](#creating-fractions-)
   * [Convenience Functions](#convenience-functions-)
     * [Printing](#printing-fractions-)
+    * [Converting](#converting-)
   * [Math](#math-)
     * [Arithmatic](#arithmatic-)
     * [Operations](#operations-)
@@ -68,6 +69,38 @@ You may create frations using any one of the following:
 > (ratio:print r)
 2/3
 ok
+```
+
+You can also use the alias ``pp`` (for "pretty print"):
+
+```lfe
+> (ratio:pp r)
+2/3
+ok
+```
+
+#### Converting [&#x219F;](#table-of-contents)
+
+To strings, atoms, and floats:
+
+```lfe
+> (ratio:->str r)
+"2/3"
+> (ratio:->atom r)
+2/3
+> (ratio:->float r)
+0.6666666666666666
+```
+
+Floats to rational numbers:
+
+```lfe
+> (ratio:float->ratio 0.5)
+#(ratio 1 2)
+> (ratio:float->ratio 1.5)
+#(ratio 3 2)
+> (ratio:float->ratio 3.1415)
+#(ratio 6283 2000)
 ```
 
 ### Math [&#x219F;](#table-of-contents)
@@ -158,13 +191,18 @@ ratio:->atom/1
 ratio:->float/1
 ratio:->str/1
 ratio:add/2
+ratio:denom/1
 ratio:div/2
 ratio:eq/2
+ratio:float->ratio/1
 ratio:gcd/2
 ratio:mult/2
 ratio:new/1
 ratio:new/2
 ratio:normalize/1
+ratio:normalize/2
+ratio:numer/1
+ratio:pow/2
 ratio:print/1
 ratio:ratio/1
 ratio:ratio/2
