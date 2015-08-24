@@ -5,7 +5,8 @@
           (->str 1)
           (->atom 1)
           (->float 1)
-          (normalize 1)))
+          (normalize 1)
+          (print-api-functions 0)))
 
 (include-lib "horatio/include/data-types.lfe")
 
@@ -44,3 +45,30 @@
    (let ((g (ratio:gcd num den)))
      (make-ratio numer (trunc (/ num g))
                  denom (trunc (/ den g))))))
+
+(defun check-function
+  ((`#(,func-name ,arity))
+   (let ((skip '(module_info
+                 get-version
+                 get-versions
+                 loaded-ratio-data-types
+                 loaded-ratio-api
+                 loaded-ratio
+                 print-api-functions)))
+     (if (lists:member func-name skip)
+       'false
+       `#(true #(,func-name ,arity))))))
+
+(defun get-api-functions ()
+  (lists:filtermap
+   #'check-function/1
+   (proplists:get_value 'exports (ratio:module_info))))
+
+(defun print-function
+  ((`#(,func-name ,arity))
+   (lfe_io:format "ratio:~p/~p~n" `(,func-name ,arity))))
+
+(defun print-api-functions ()
+  (lists:foreach
+   #'print-function/1
+   (lists:sort (get-api-functions))))
