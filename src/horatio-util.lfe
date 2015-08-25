@@ -5,6 +5,7 @@
           (->str 1)
           (->atom 1)
           (->float 1)
+          (normalise 1) (normalise 2)
           (normalize 1) (normalize 2)
           (fix-sign 1) (fix-sign 2)
           (float->ratio 1)
@@ -38,15 +39,22 @@
   (((match-ratio numer n denom d))
    (/ n d)))
 
-(defun normalize
+(defun normalise
   (((match-ratio numer n denom d))
-   (normalize n d)))
+   (normalise n d)))
 
-(defun normalize (n d)
+(defun normalise (n d)
   (let ((`(,n ,d) (fix-sign n d))
         (g (gcd n d)))
-    (ratio:new (trunc (/ n g))
-               (trunc (/ d g)))))
+    (ratio:new
+      (trunc (/ n g))
+      (trunc (/ d g)))))
+
+(defun normalize (r)
+  (normalise r))
+
+(defun normalize (n d)
+  (normalise n d))
 
 (defun fix-sign
   (((match-ratio numer n denom d))
@@ -61,12 +69,15 @@
          (list n d))))
 
 (defun float->ratio
+  "Floating point math sometimes results in poor converstions to
+   ratios, requiring two passes of normalise."
   ((f) (when (is_float f))
    (let* ((fl (float_to_list f '(#(decimals 20))))
           (`(,int ,dec) (string:tokens fl "."))
           (numer (list_to_integer (++ int dec)))
           (denom (trunc (math:pow 10 (length dec)))))
-     (normalize numer denom))))
+     (normalise
+       (normalise numer denom)))))
 
 (defun check-function
   ((`#(,func-name ,arity))
