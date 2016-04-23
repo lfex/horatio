@@ -1,16 +1,17 @@
 %% -*- erlang -*-
-{application, 'horatio',
+{application, horatio,
  [
   %% A quick description of the application.
-  {description, "My project description..."},
+  {description, "The rational and most trusted friend of the tragic hero, Floating Point"},
 
   %% The version of the application
-  {vsn, "0.0.1"},
+  {vsn, "0.1.0"},
 
   %% All modules used by the application.
   {modules,
    [
-    'ratio'
+    horatio,
+    ratio
    ]},
 
   %% All of the registered names the application uses. This can be ignored.
