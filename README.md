@@ -213,4 +213,4 @@ ratio:sub/2
 
 [travis]: https://travis-ci.org/lfex/horatio
 [travis-badge]: https://travis-ci.org/lfex/horatio.png?branch=master
-[logo]: resources/images/horatio.jpg
+[logo]: priv/images/horatio.jpg
