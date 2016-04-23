@@ -14,10 +14,10 @@
 (include-lib "horatio/include/data-types.lfe")
 
 (defun get-version ()
-  (lutil:get-app-version 'horatio))
+  (lr3-ver-util:get-app-version 'horatio))
 
 (defun get-versions ()
-  (++ (lutil:get-versions)
+  (++ (lr3-ver-util:get-versions)
       `(#(horatio ,(get-version)))))
 
 (defun gcd
