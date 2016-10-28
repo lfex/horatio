@@ -7,6 +7,7 @@ env:
   - PATH=".:$PATH"
 script: make check
 otp_release:
-  - 18.2
+  - 19.1
+  - 18.3
   - 17.5
   - R16B03-1
