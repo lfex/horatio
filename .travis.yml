@@ -5,7 +5,9 @@ before_script:
     - chmod +x rebar3
 env:
   - PATH=".:$PATH"
-script: make check
+script:
+  - make build-all
+  - make check
 otp_release:
   - 19.1
   - 18.3
