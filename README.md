@@ -1,8 +1,11 @@
-# horatio [![Build Status][travis-badge]][travis]
+# horatio
+
+[![Build Status][travis badge]][travis] [![LFE Versions][lfe badge]][lfe] [![Erlang Versions][erlang badge]][versions] [![Tags][github tags badge]][github tags] [![Downloads][hex downloads]][hex package]
+
+[![Horatio logo][logo]][logo]
 
 *The rational and most trusted friend of the tragic hero, Floating Point*
 
-[![Horatio logo][logo]][logo]
 
 ## Table of Contents
 
@@ -18,29 +21,33 @@
     * [Operations](#operations-)
     * [Powers](#powers-)
 * [API](#api-)
+* [License](#license-)
+
 
 ## Introduction [&#x219F;](#table-of-contents)
 
 Add content to me here!
+
 
 ## Installation [&#x219F;](#table-of-contents)
 
 Just add it to your ``rebar.config`` deps:
 
 ```erlang
-  {deps, [
-    ...
-    {horatio, ".*",
-      {git, "git@github.com:lfex/horatio.git", "master"}}
-      ]}.
+{deps, [
+  ...
+  {horatio, ".*",
+    {git, "git@github.com:lfex/horatio.git", "master"}}
+    ]}.
 ```
 
 And then do the usual:
 
 ```bash
-    $ rebar get-deps
-    $ rebar compile
+$ rebar get-deps
+$ rebar compile
 ```
+
 
 ## Usage [&#x219F;](#table-of-contents)
 
@@ -209,8 +216,30 @@ ratio:ratio/1
 ratio:ratio/2
 ratio:sub/2
 ```
+
+
+## License [&#x219F;](#table-of-contents)
+
+Apache Version 2 License
+
+Copyright © 2015-2016, Duncan McGreggor <oubiwann@gmail.com>
+
+
 <!-- Named page links below: /-->
 
-[travis]: https://travis-ci.org/lfex/horatio
-[travis-badge]: https://travis-ci.org/lfex/horatio.png?branch=master
 [logo]: priv/images/horatio.jpg
+[org]: https://github.com/lfex
+[github]: https://github.com/lfex/horatio
+[gitlab]: https://gitlab.com/lfex/horatio
+[travis]: https://travis-ci.org/lfex/horatio
+[travis badge]: https://img.shields.io/travis/lfex/horatio.svg
+[lfe]: https://github.com/rvirding/lfe
+[lfe badge]: https://img.shields.io/badge/lfe-1.2.0-blue.svg
+[erlang badge]: https://img.shields.io/badge/erlang-R16%20to%2019.1-blue.svg
+[versions]: https://github.com/lfex/horatio/blob/master/.travis.yml
+[github tags]: https://github.com/lfex/horatio/tags
+[github tags badge]: https://img.shields.io/github/tag/lfex/horatio.svg
+[github downloads]: https://img.shields.io/github/downloads/lfex/horatio/total.svg
+[hex badge]: https://img.shields.io/hexpm/v/horatio.svg?maxAge=2592000
+[hex package]: https://hex.pm/packages/horatio
+[hex downloads]: https://img.shields.io/hexpm/dt/horatio.svg
