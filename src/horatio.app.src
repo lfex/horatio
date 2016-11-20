@@ -5,7 +5,7 @@
   {description, "The rational and most trusted friend of the tragic hero, Floating Point (rational numbers in LFE)"},
 
   %% The version of the application
-  {vsn, "0.2.0-rc1"},
+  {vsn, "0.2.0-rc2"},
 
   %% All modules used by the application.
   {modules,
