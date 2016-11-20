@@ -72,7 +72,7 @@
   "Floating point math sometimes results in poor converstions to
    ratios, requiring two passes of normalise."
   ((f) (when (is_float f))
-   (let* ((fl (float_to_list f '(#(decimals 20))))
+   (let* ((fl (lutil-math:float->str f))
           (`(,int ,dec) (string:tokens fl "."))
           (numer (list_to_integer (++ int dec)))
           (denom (trunc (math:pow 10 (length dec)))))
